@@ -16,7 +16,7 @@ type OnClearWaitingQueue = (params: any) => void;
 type OnDidMountCallback = (containerInstance: ContainerInstance) => void;
 type OnWillUnmountCallback = OnDidMountCallback;
 
-export type OnChangeCallback = (toast: Modal) => void;
+export type OnChangeCallback = (modal: Modal) => void;
 
 type Callback =
   | OnShowCallback
@@ -70,14 +70,6 @@ export const eventManager: EventManager = {
     return this;
   },
 
-  /**
-   * Enqueue the event at the end of the call stack
-   * Doing so let the user call toast as follow:
-   * toast('1')
-   * toast('2')
-   * toast('3')
-   * Without setTimemout the code above will not work
-   */
   emit(event: Event, ...args: any[]) {
     this.list.has(event) &&
       this.list.get(event)!.forEach((callback: Callback) => {

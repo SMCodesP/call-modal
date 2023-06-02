@@ -1,8 +1,6 @@
 import { eventManager, Event } from '../core/eventManager';
 
 export function withCallModal<T>(Component: React.FC<Partial<T>>) {
-  console.log('withCallModal called');
-
   type Props = T & {
     show?: () => void;
     hide?: () => void;
