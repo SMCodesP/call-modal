@@ -1,7 +1,7 @@
 import { useCalledModal } from '../hooks/useCalledModal';
 
-export function ModalContainer() {
+export const ModalContainer: React.FC = () => {
   const { modalToRender } = useCalledModal();
 
-  return modalToRender && modalToRender;
-}
+  return <>{modalToRender && modalToRender}</>;
+};
