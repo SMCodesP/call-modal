@@ -14,7 +14,7 @@ jobs:
         with:
           bun-version: latest
       - name: Install
-        run: bun run
+        run: bun install
       - name: Build
         run: bun run build
       - name: Build SWC
