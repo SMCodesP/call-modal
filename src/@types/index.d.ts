@@ -1,10 +1,12 @@
-export type Id = number | string;
+import type { ReactNode } from 'react'
+
+export type Id = number | string
 /**
  * @INTERNAL
  */
-export type Modal = React.ReactNode;
+export type Modal = ReactNode
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface ModalContainerProps {
-  content: React.ReactNode;
+  content: ReactNode
 }
