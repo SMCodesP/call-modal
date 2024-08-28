@@ -9,6 +9,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Install
-        run: yarn
+        run: bun run
       - name: Lint
-        run: yarn lint
+        run: bun run lint

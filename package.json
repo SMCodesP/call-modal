@@ -22,7 +22,14 @@
     "build:watch": "tsc -w -p tsconfig.build.json",
     "build:swc": "swc ./src -d build",
     "build:swc:watch": "swc ./src -d build -w",
-    "release": "semantic-release"
+    "release": "semantic-release",
+    "format": "biome format --write src",
+    "lint": "biome lint src"
+  },
+  "lint-staged": {
+    "./src/**/*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": [
+      "biome check --apply --no-errors-on-unmatched --files-ignore-unknown=true"
+    ]
   },
   "peerDependencies": {
     "react": "*",

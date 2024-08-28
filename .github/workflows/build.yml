@@ -9,10 +9,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Install
-        run: yarn
+        run: bun run
       - name: Build
-        run: yarn build
+        run: bun run build
       - name: Build SWC
-        run: yarn build:swc
-      - name: Build storybook
-        run: yarn storybook:build
+        run: bun run build:swc
