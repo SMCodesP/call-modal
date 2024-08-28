@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/SMCodesP/call-modal/compare/v1.0.0...v1.1.0) (2024-08-28)
+
+
+### Features
+
+* change version call-modal ([d9fe6a0](https://github.com/SMCodesP/call-modal/commit/d9fe6a063ba27f5f2a4aa4162b15a7cb1922cca5))
+
 # 1.0.0 (2024-08-28)
 
 
