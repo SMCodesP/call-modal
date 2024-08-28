@@ -1,44 +1,49 @@
-import { useEffect, useState } from 'react';
-import { Id, Modal, ModalContainerProps } from '../@types';
-import { eventManager, Event } from '../core/eventManager';
+import type { Modal } from '../@types'
 
-export interface ContainerInstance {
-  toastKey: number;
-  displayedModal: number;
-  props: ModalContainerProps;
-  containerId?: Id | null;
-  getModal: (id: Id) => Modal | null | undefined;
-  count: number;
-}
+import { useMap } from '@uidotdev/usehooks'
+import { useEffect } from 'react'
+
+import { Event, eventManager } from '../core/eventManager'
 
 export function useCalledModal() {
-  const [modalToRender, setModalToRender] = useState<Modal>();
+  const mapModals = useMap<string>()
 
   useEffect(() => {
     eventManager
       .cancelEmit(Event.WillUnmount)
       .on(Event.Show, buildModal)
-      .on(Event.Clear, removeModal);
+      .on(Event.Clear, destroyModals)
 
     return () => {
-      setModalToRender(undefined);
-      eventManager.clearEvents();
-    };
-  }, []);
+      mapModals.clear()
+      eventManager.clearEvents()
+    }
+  }, [mapModals])
 
-  function removeModal() {
-    setModalToRender(undefined);
+  function destroyModals() {
+    mapModals.clear()
   }
 
   function buildModal(modal: Modal) {
-    appendModal(modal);
+    appendModal(modal)
   }
 
   function appendModal(modal: Modal) {
-    setModalToRender(modal);
+    for (const [key, value] of Array.from(mapModals)) {
+      if (value.open === false) {
+        mapModals.delete(key)
+      }
+    }
+
+    const id = crypto.randomUUID()
+    mapModals.set(id, {
+      id,
+      component: modal,
+      open: true,
+    })
   }
 
   return {
-    modalToRender,
-  };
+    mapModals,
+  }
 }

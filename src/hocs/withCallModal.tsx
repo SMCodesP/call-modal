@@ -1,27 +1,43 @@
-import { eventManager, Event } from '../core/eventManager';
+import type { ComponentType, FC } from 'react'
+import { Event, eventManager } from '../core/eventManager'
 
-export function withCallModal<T>(Component: React.FC<Partial<T>>) {
-  type Props = T & {
-    show?: () => void;
-    hide?: () => void;
-  };
+export type ModalProps<
+  T extends {
+    open: boolean
+    setOpen(open: boolean): void
+  } = {
+    open: boolean
+    setOpen(open: boolean): void
+  },
+> = T & {
+  show?: () => void
+  destroy?: () => void
+}
 
-  const onClose = () => {
-    eventManager.emit(Event.Clear);
-  };
+export function withCallModal<
+  T extends {
+    open: boolean
+    setOpen: (open: boolean) => void
+  },
+>(Component: ComponentType<T>) {
+  const onDestroy = () => {
+    eventManager.emit(Event.Clear)
+  }
 
-  const onShow = (props: Partial<T>) => {
-    eventManager.emit(Event.Show, <Component onClose={onClose} {...props} />);
-  };
+  const onShow = (props?: Partial<T>) => {
+    eventManager.emit(Event.Show, (rest: T) => (
+      <Component {...props} {...rest} />
+    ))
+  }
 
-  const ComponentWithoutGlobalCall: React.FC<Props> = (props) => (
+  const ComponentWithoutGlobalCall: FC<ModalProps<T>> = (props) => (
     <Component {...props} />
-  );
+  )
 
   const ComponentWithGlobalCallAndShow = Object.assign(
     ComponentWithoutGlobalCall,
-    { show: onShow, close: onClose },
-  );
+    { show: onShow, destroy: onDestroy },
+  )
 
-  return ComponentWithGlobalCallAndShow;
+  return ComponentWithGlobalCallAndShow
 }
