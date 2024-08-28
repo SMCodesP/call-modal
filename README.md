@@ -2,7 +2,7 @@
 
 ## Descrição
 
-Um simples HOC (Higher Order Component) para chamar um modal de qualquer lugar, sem renderizá-lo no mesmo.
+Um simples HOC (Higher Order Component) para chamar um modal de qualquer lugar, sem renderizá-lo no mesmo
 
 ## Instalação
 
