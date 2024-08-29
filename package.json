@@ -13,9 +13,7 @@
     "url": "https://github.com/SMCodesP/call-modal/issues"
   },
   "homepage": "https://github.com/SMCodesP/call-modal#readme",
-  "files": [
-    "build"
-  ],
+  "files": ["build"],
   "scripts": {
     "dev": "nodemon",
     "develop": "bun -r @swc-node/register ./src/index.ts",
@@ -63,7 +61,6 @@
     "typescript": "^5.5.4"
   },
   "types": "./build/index.d.ts",
-  "type": "module",
   "dependencies": {
     "@uidotdev/usehooks": "^2.4.1"
   },
