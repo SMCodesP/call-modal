@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/SMCodesP/call-modal/compare/v1.1.0...v1.1.1) (2024-08-29)
+
+
+### Bug Fixes
+
+* try fix exports ([a53d927](https://github.com/SMCodesP/call-modal/commit/a53d9271904f5c3984c8f784149dfae56f07ae87))
+
 # [1.1.0](https://github.com/SMCodesP/call-modal/compare/v1.0.0...v1.1.0) (2024-08-28)
 
 
