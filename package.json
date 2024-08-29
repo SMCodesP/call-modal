@@ -1,6 +1,6 @@
 {
   "name": "call-modal",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "author": "SMCodesP <samuel.silva513@etec.sp.gov.br>",
   "license": "MIT",
   "description": "A minimalist call modal using static methods",
@@ -13,9 +13,7 @@
     "url": "https://github.com/SMCodesP/call-modal/issues"
   },
   "homepage": "https://github.com/SMCodesP/call-modal#readme",
-  "files": [
-    "build"
-  ],
+  "files": ["build"],
   "scripts": {
     "dev": "nodemon",
     "develop": "bun -r @swc-node/register ./src/index.ts",
