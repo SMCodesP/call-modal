@@ -2,6 +2,7 @@ import type { Modal } from '../@types'
 
 import { useMap } from '@uidotdev/usehooks'
 import { useEffect } from 'react'
+import { v4 as uuidv4 } from 'uuid'
 
 import { Event, eventManager } from '../core/eventManager'
 
@@ -35,7 +36,7 @@ export function useCalledModal() {
       }
     }
 
-    const id = crypto.randomUUID()
+    const id = uuidv4()
     mapModals.set(id, {
       id,
       component: modal,
