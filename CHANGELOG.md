@@ -1,3 +1,11 @@
+## [1.2.1](https://github.com/SMCodesP/call-modal/compare/v1.2.0...v1.2.1) (2024-10-30)
+
+
+### Bug Fixes
+
+* change version on package ([d518107](https://github.com/SMCodesP/call-modal/commit/d5181075578c40c16b50bb082945cdf059411402))
+* problem with without lib to random uuid ([067cf4a](https://github.com/SMCodesP/call-modal/commit/067cf4a0d5774b94a5c94a950f091eced9a7a0a9))
+
 # [1.2.0](https://github.com/SMCodesP/call-modal/compare/v1.1.1...v1.2.0) (2024-08-29)
 
 

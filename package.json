@@ -13,7 +13,9 @@
     "url": "https://github.com/SMCodesP/call-modal/issues"
   },
   "homepage": "https://github.com/SMCodesP/call-modal#readme",
-  "files": ["build"],
+  "files": [
+    "build"
+  ],
   "scripts": {
     "dev": "nodemon",
     "develop": "bun -r @swc-node/register ./src/index.ts",
