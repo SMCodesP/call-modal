@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/SMCodesP/call-modal/compare/v1.2.1...v1.2.2) (2025-08-20)
+
+
+### Bug Fixes
+
+* problem with automate publish on npm ([ddb78af](https://github.com/SMCodesP/call-modal/commit/ddb78af88aa83d231da138138ef21f3ce50a7dd8))
+
 ## [1.2.1](https://github.com/SMCodesP/call-modal/compare/v1.2.0...v1.2.1) (2024-10-30)
 
 
