@@ -16,8 +16,8 @@ export type ModalProps<
 
 export function withCallModal<
   T extends {
-    open: boolean
-    setOpen: (open: boolean) => void
+    open?: boolean
+    setOpen?: (open: boolean) => void
   },
 >(Component: ComponentType<T>) {
   const onDestroy = () => {
