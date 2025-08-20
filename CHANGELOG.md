@@ -1,3 +1,10 @@
+## [1.2.4](https://github.com/SMCodesP/call-modal/compare/v1.2.3...v1.2.4) (2025-08-20)
+
+
+### Bug Fixes
+
+* update project dependencies to newer versions ([bbb175f](https://github.com/SMCodesP/call-modal/commit/bbb175f90d7df3c9f4a06ec6383e27e053fdbf1a))
+
 ## [1.2.3](https://github.com/SMCodesP/call-modal/compare/v1.2.2...v1.2.3) (2025-08-20)
 
 
