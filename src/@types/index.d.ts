@@ -6,7 +6,6 @@ export type Id = number | string
  */
 export type Modal = ReactNode
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface ModalContainerProps {
   content: ReactNode
 }
