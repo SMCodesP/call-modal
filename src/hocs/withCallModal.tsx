@@ -3,11 +3,11 @@ import { Event, eventManager } from '../core/eventManager'
 
 export type ModalProps<
   T extends {
-    open: boolean
-    setOpen(open: boolean): void
+    open?: boolean
+    setOpen?: (open: boolean) => void
   } = {
-    open: boolean
-    setOpen(open: boolean): void
+    open?: boolean
+    setOpen?: (open: boolean) => void
   },
 > = T & {
   show?: () => void
