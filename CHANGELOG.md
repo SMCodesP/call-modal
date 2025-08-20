@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/SMCodesP/call-modal/compare/v1.2.2...v1.2.3) (2025-08-20)
+
+
+### Bug Fixes
+
+* make open and setOpen properties optional in ModalProps ([03fd907](https://github.com/SMCodesP/call-modal/commit/03fd90797c27d37df307c7e8d4bc55f038075e1f))
+
 ## [1.2.2](https://github.com/SMCodesP/call-modal/compare/v1.2.1...v1.2.2) (2025-08-20)
 
 
