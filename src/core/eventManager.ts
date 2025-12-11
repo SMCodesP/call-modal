@@ -4,6 +4,7 @@ import { Id, Modal } from '../@types'
 export const enum Event {
   Show,
   Clear,
+  Close,
   DidMount,
   WillUnmount,
   Change,
@@ -11,7 +12,8 @@ export const enum Event {
 }
 
 type OnShowCallback = (content: any, options: any) => void
-type OnClearCallback = (id?: Id) => void
+type OnClearCallback = () => void
+type OnCloseCallback = (id: Id) => void
 type OnClearWaitingQueue = (params: any) => void
 
 export type OnChangeCallback = (modal: Modal) => void
@@ -19,6 +21,7 @@ export type OnChangeCallback = (modal: Modal) => void
 type Callback =
   | OnShowCallback
   | OnClearCallback
+  | OnCloseCallback
   | OnClearWaitingQueue
   | OnChangeCallback
 type TimeoutId = ReturnType<typeof setTimeout>
@@ -28,10 +31,12 @@ export interface EventManager {
   emitQueue: Map<Event, TimeoutId[]>
   on(event: Event.Show, callback: OnShowCallback): EventManager
   on(event: Event.Clear, callback: OnClearCallback): EventManager
+  on(event: Event.Close, callback: OnCloseCallback): EventManager
   off(event: Event, callback?: Callback): EventManager
   cancelEmit(event: Event): EventManager
   emit(event: Event.Show, content: ReactNode | any): void
-  emit(event: Event.Clear, id?: string | number): void
+  emit(event: Event.Clear): void
+  emit(event: Event.Close, id: string | number): void
   clearEvents(): void
 }
 

@@ -14,6 +14,7 @@ export function useCalledModal() {
       .cancelEmit(Event.WillUnmount)
       .on(Event.Show, buildModal)
       .on(Event.Clear, destroyModals)
+      .on(Event.Close, closeModal)
 
     return () => {
       mapModals.clear()
@@ -25,23 +26,37 @@ export function useCalledModal() {
     mapModals.clear()
   }
 
-  function buildModal(modal: Modal) {
-    appendModal(modal)
+  function closeModal(id: string | number) {
+    mapModals.delete(String(id))
   }
 
-  function appendModal(modal: Modal) {
+  function buildModal(modalOrObject: Modal | { component: Modal; id: string }) {
+    if (
+      typeof modalOrObject === 'object' &&
+      modalOrObject !== null &&
+      'component' in modalOrObject &&
+      'id' in modalOrObject
+    ) {
+      return appendModal(modalOrObject.component, modalOrObject.id)
+    }
+    return appendModal(modalOrObject as Modal)
+  }
+
+  function appendModal(modal: Modal, modalId?: string) {
     for (const [key, value] of Array.from(mapModals)) {
       if (value.open === false) {
         mapModals.delete(key)
       }
     }
 
-    const id = uuidv4()
+    const id = modalId || uuidv4()
     mapModals.set(id, {
       id,
       component: modal,
       open: true,
     })
+
+    return id
   }
 
   return {
