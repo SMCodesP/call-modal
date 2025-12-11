@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/SMCodesP/call-modal/compare/v1.3.0...v1.3.1) (2025-12-11)
+
+
+### Bug Fixes
+
+* remove commented code in withCallModal HOC ([0be1720](https://github.com/SMCodesP/call-modal/commit/0be172028c345a4f168d93ff30bbd413abab9a95))
+
 # [1.3.0](https://github.com/SMCodesP/call-modal/compare/v1.2.4...v1.3.0) (2025-12-11)
 
 
