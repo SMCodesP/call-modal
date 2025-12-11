@@ -22,7 +22,6 @@ export function withCallModal<
     setOpen?: (open: boolean) => void
   },
 >(Component: ComponentType<T>) {
-  // Armazena o id do modal na closure
   let modalId: string | null = null
 
   const onClose = () => {
