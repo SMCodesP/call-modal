@@ -1,6 +1,6 @@
 {
   "name": "call-modal",
-  "version": "1.2.4",
+  "version": "1.3.0",
   "author": "SMCodesP <samuel.silva513@etec.sp.gov.br>",
   "license": "MIT",
   "description": "A minimalist call modal using static methods",

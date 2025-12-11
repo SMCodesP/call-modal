@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/SMCodesP/call-modal/compare/v1.2.4...v1.3.0) (2025-12-11)
+
+
+### Features
+
+* add close event and update modal management ([0712ad3](https://github.com/SMCodesP/call-modal/commit/0712ad30c309c987303b2706d08b29daebf2d9ce))
+
 ## [1.2.4](https://github.com/SMCodesP/call-modal/compare/v1.2.3...v1.2.4) (2025-08-20)
 
 
